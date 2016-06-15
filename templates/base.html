@@ -1,0 +1,121 @@
+{% load staticfiles %}
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>V IF na Roça</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.amber-orange.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="background" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div id="barra" class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'index' %}">Inicio</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'lista' %}">Lista</a>
+            </nav>
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+          </span>
+        </div>
+      </div>
+
+      <div  class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <img class="android-logo-image" src="{% static 'images/android-logo-white.png' %}">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="{% url 'index' %}">Inicio</a>
+          <a class="mdl-navigation__link" href="{% url 'lista' %}">Lista</a>
+        </nav>
+      </div>
+
+      <div class="android-content mdl-layout__content">
+        <img id="bandeira" src="{% static 'images/bandeira.jpg' %}" alt="">
+        <a name="top"></a>
+        <img src="{% static 'images/logo.jpg' %}" id="logo" alt="">
+        <div class="android-be-together-section mdl-typography--text-center">
+          <div class="logo-font android-slogan">
+            V IF na Roça
+          </div>
+          <div class="logo-font android-sub-slogan">
+            Algum texto pra chamar atenção.
+          </div>
+
+        {% block conteudo %}
+        {% endblock %}
+        
+        <footer class="android-footer mdl-mega-footer">
+
+          <div class="mdl-mega-footer--middle-section">
+              <br>
+            	Desenvolvidor por: 
+              <a target="_blank" href="https://github.com/joseluan">
+                José Luan
+              </a>
+              <br>
+              <br>
+              Organização: 
+              <a target="_blank" href="https://www.facebook.com/GEFA-Gr%C3%AAmio-Estudantil-Franscisca-Alves-562247990600361/?fref=ts">
+                GEFA - Grêmio Estudantil Franscisca Alves
+              </a>
+              <br>
+              <br>
+              <br>
+
+          
+          </div>
+
+        </footer>
+      </div>
+    </div>
+  </div>
+    <a href="{% url 'lista' %}" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Participar</a>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  </body>
+</html>
