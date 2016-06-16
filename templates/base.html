@@ -43,12 +43,15 @@
     </style>
   </head>
   <body>
+
     <div id="background" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <div id="barra" class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+            <a href="{% url 'index' %}">
+              <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+            </a>
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -60,7 +63,9 @@
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+            <a href="{% url 'index' %}">
+              <img class="android-logo-image" src="{% static 'images/android-logo.png' %}">
+            </a>
           </span>
         </div>
       </div>
@@ -75,16 +80,24 @@
         </nav>
       </div>
 
+      
       <div class="android-content mdl-layout__content">
         <img id="bandeira" src="{% static 'images/bandeira.jpg' %}" alt="">
-        <a name="top"></a>
-        <img src="{% static 'images/logo.jpg' %}" id="logo" alt="">
+
+        <a href="{% url 'index' %}">
+          <img src="{% static 'images/logo.jpg' %}" id="logo" alt="">
+        </a>
+
         <div class="android-be-together-section mdl-typography--text-center">
-          <div class="logo-font android-slogan">
-            V IF na Roça
-          </div>
-          <div class="logo-font android-sub-slogan">
-            Algum texto pra chamar atenção.
+         
+          <div id="titulo">
+            <div class="logo-font android-slogan">
+              V IF na Roça
+            </div>
+            <div class="logo-font android-sub-slogan">
+              Local: AABB - João Câmara/RN <br>
+              Data: 09 DE JULHO <br>
+            </div>
           </div>
 
         {% block conteudo %}
@@ -98,18 +111,28 @@
               <a target="_blank" href="https://github.com/joseluan">
                 José Luan
               </a>
+
+              <a target="_blank" href="https://github.com/joseluan">
+                <img src="{% static 'images/logo_github.png ' %}" alt="">
+              </a>
+              <a target="_blank" href="https://www.facebook.com/joseluan2012">
+                <img src="{% static 'images/logo_fb.png' %}" alt="">
+              </a>
+
               <br>
               <br>
               Organização: 
               <a target="_blank" href="https://www.facebook.com/GEFA-Gr%C3%AAmio-Estudantil-Franscisca-Alves-562247990600361/?fref=ts">
                 GEFA - Grêmio Estudantil Franscisca Alves
               </a>
-              <br>
-              <br>
-              <br>
 
-          
-          </div>
+              <a target="_blank" href="https://www.facebook.com/GEFA-Gr%C3%AAmio-Estudantil-Franscisca-Alves-562247990600361/?fref=ts">
+                <img src="{% static 'images/logo_gefa.jpg' %}" alt="">
+              </a>
+
+              <br>
+              <br>
+              <br>
 
         </footer>
       </div>
